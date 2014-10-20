@@ -12,4 +12,17 @@ $('#gamestartscreen').show();
 game.canvas = $('#gamecanvas')[0];
 game.context = game.canvas.getContext('2d');
 },
+
+mabout: function(){
+	$('.gamelayer').hide();
+	$('#gamestartscreen').hide();
+	$('#levelselectscreen').show();	
+},
+
+mback: function(){
+	$('.gamelayer').hide();
+	$('#gamestartscreen').show();
+	$('#levelselectscreen').hide();	
+}
+
 };

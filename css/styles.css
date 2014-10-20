@@ -1,7 +1,6 @@
 #gamecontainer {
 width:800px;
 height:600px;
-background:url(../img/back.png);
 background-size: cover;
 border: 1px solid black;
 }
@@ -14,9 +13,20 @@ display:none;
 /* Game Starting Menu Screen */
 #gamestartscreen {
 padding-top:350px;
+background: url(../img/back.png) no-repeat;
 text-align:center;
 }
+
+#levelselectscreen {
+background: url(../img/background.png) no-repeat;
+text-align:center;
+}
+
 #gamestartscreen img {
 margin:0px;
 cursor:pointer;
+}
+
+.padtop{
+padding-top:450px;
 }
