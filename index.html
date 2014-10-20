@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, 
+    user-scalable=no, initial-scale=1, maximum-scale=1, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="stylesheet" href="styles.css" type="text/css" media="screen" charset="utf-8">
+<style type="text/css">
+body { margin: 0; padding: 0; background: #000;}
+canvas { display: block; margin: 0 auto; background: url(img/back.png); }
+</style>
+
+</head>
+
+<body>
+
+<div id="gamecontainer">
+			<canvas id="gamecanvas" class="gamelayer"></canvas>
+			
+		</div><script>
+var POP = {
+    WIDTH: 800, 
+    HEIGHT:  600, 
+    RATIO:  null,
+    currentWidth:  null,
+    currentHeight:  null,
+    canvas: null,
+    ctx:  null,
+
+    init: function() {
+        POP.RATIO = POP.WIDTH / POP.HEIGHT;
+        POP.currentWidth = POP.WIDTH;
+        POP.currentHeight = POP.HEIGHT;
+        POP.canvas = document.getElementsByTagName('canvas')[0];
+        POP.canvas.width = POP.WIDTH;
+        
+		POP.canvas.height = POP.HEIGHT;
+        		$('.gamelayer').hide();
+$('#gamestartscreen').show();
+		POP.ctx = POP.canvas.getContext('2d');
+        POP.resize();
+    },
+
+    resize: function() {
+
+        POP.currentHeight = window.innerHeight;
+        POP.currentWidth = POP.currentHeight * POP.RATIO;
+		if (POP.android || POP.ios) {
+            document.body.style.height = (window.innerHeight + 50) + 'px';
+        }
+
+        POP.canvas.style.width = POP.currentWidth ;
+        POP.canvas.style.height = POP.currentHeight ;
+		window.setTimeout(function() {
+                window.scrollTo(0,1);
+        }, 1);
+		
+
+    }
+
+};
+
+window.addEventListener('load', POP.init, false);
+window.addEventListener('resize', POP.resize, false);
+</script>
+
+</body>
+</html>

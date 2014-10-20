@@ -1,0 +1,22 @@
+#gamecontainer {
+width:800px;
+height:600px;
+background:url(../img/back.png);
+background-size: cover;
+border: 1px solid black;
+}
+.gamelayer {
+width:800px;
+height:600px;
+position:absolute;
+display:none;
+}
+/* Game Starting Menu Screen */
+#gamestartscreen {
+padding-top:350px;
+text-align:center;
+}
+#gamestartscreen img {
+margin:0px;
+cursor:pointer;
+}
