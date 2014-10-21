@@ -15,7 +15,6 @@ game.init();
 });
 
 
-
 var game = {
 
 	WIDTH: 800, 
@@ -40,7 +39,7 @@ var game = {
     ios:  null,
 	
 	init: function(){
-		
+		lockedAllowed = window.screen.lockOrientation('horizontal-primary');
 		game.RATIO = game.WIDTH / game.HEIGHT;
         game.currentWidth = game.WIDTH;
         game.currentHeight = game.HEIGHT;
