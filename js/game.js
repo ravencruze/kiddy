@@ -18,7 +18,7 @@ game.init();
 var game = {
 
 	WIDTH: 800, 
-    HEIGHT:  600, 
+    HEIGHT: 600, 
     scale:  1,
     offset: {top: 0, left: 0},
     entities: [],
@@ -39,21 +39,21 @@ var game = {
     ios:  null,
 	
 	init: function(){
-		lockedAllowed = window.screen.lockOrientation('horizontal-primary');
 		game.RATIO = game.WIDTH / game.HEIGHT;
         game.currentWidth = game.WIDTH;
         game.currentHeight = game.HEIGHT;
 		
-		$('.gamelayer').hide();
-		$('#gamecanvas').show();
-		$('#gamestartscreen').show();
 		
 		game.canvas = document.getElementsByTagName('canvas')[0];
-		
 		game.canvas.width = game.WIDTH;
         game.canvas.height = game.HEIGHT;
 		
+		
 		game.context = game.canvas.getContext('2d');
+		
+		$('.gamelayer').hide();
+		$('#gamecanvas').show();
+		$('#gamestartscreen').show();
 		
 		game.resize();
 	},
