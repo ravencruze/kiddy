@@ -9,7 +9,9 @@
 	</head>
 	<body>
 		<div id="gamecontainer">
-			<canvas id="gamecanvas" class="gamelayer"></canvas>
+			<canvas id="gamecanvas" class="gamelayer">
+            
+            </canvas>
 			<div id="scorescreen" class="gamelayer">
 				<img id="togglemusic" src="images/icons/sound.png">
 				<img src="images/icons/prev.png">
@@ -17,15 +19,19 @@
 			</div>
 
 			<div id="gamestartscreen" class="gamelayer">
-				<img src="img/babout.png" id="about" onClick="game.mabout()" alt="About">
-				<img src="img/bhtp.png" alt="How to Play">
-				<img src="img/bplay.png" alt="Play Game">
-				<img src="img/bhs.png" alt="Highscore">
-				<img src="img/bexit.png" alt="Exit">
+				<img src="img/babout.png" class="padtop2" id="mabout" alt="About">
+				<img src="img/bhtp.png" class="padtop2" id="mhtp" onClick="game.mhtp()" alt="How to Play">
+				<img src="img/bplay.png" class="padtop2" id="mplay" alt="Play Game">
+				<img src="img/bhs.png" class="padtop2" id="mhs" alt="Highscore">
+				<img src="img/bexit.png" class="padtop2" id="mexit" alt="Exit">
 			</div>
 
 			<div id="levelselectscreen" class="gamelayer">
                 <img src="img/bback.png" id="about" class="padtop" onClick="game.mback()"  alt="About">
+            </div>
+            
+            <div id="gamehtp" class="gamelayer">
+            
             </div>
             
 			<div id="loadingscreen" class="gamelayer">
