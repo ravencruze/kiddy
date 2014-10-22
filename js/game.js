@@ -49,11 +49,16 @@ var game = {
         game.canvas.height = game.HEIGHT;
 		
 		
-		game.context = game.canvas.getContext('2d');
+		game.ctx = game.canvas.getContext('2d');
 		
-		$('.gamelayer').hide();
-		$('#gamecanvas').show();
-		$('#gamestartscreen').show();
+		game.Draw.text('Hit: ' + game.score.hit, 20, 30, 14, '#fff');
+        game.Draw.text('Escaped: ' + game.score.escaped, 20, 50, 14, '#fff');
+        game.Draw.text('Accuracy: ' + game.score.accuracy + '%', 20, 70, 14, '#fff');
+		
+		game.ctx.font = "20px Georgia";
+		game.ctx.fillText("Hello World!", 10, 50);
+		
+		
 		
 		game.resize();
 	},
@@ -77,15 +82,18 @@ var game = {
     },
 	
 	mabout: function(){
-		$('.gamelayer').hide();
+		
+		game.ctx.font = "20px Georgia";
+		game.ctx.fillText("Hello World!", 30, 600);
+		
+		
 		$('#gamestartscreen').hide();
-		$('#levelselectscreen').hide();
-		$('#gamehs').hide();
 		$('#gameabout').show();
+		
+		
 	},
 	
 	mback: function(){
-		$('.gamelayer').hide();
 		$('#gamestartscreen').show();
 		$('#levelselectscreen').hide();
 		$('#gamehs').hide();
@@ -94,12 +102,8 @@ var game = {
 	
 	mhtp: function(){
 		
-		$('.gamelayer').hide();
 		$('#gamestartscreen').hide();
-		$('#levelselectscreen').hide();
-		$('#gamehs').hide();
 		$('#gamehtp').show();
-		$('#gameabout').hide();
 	},
 	
 	mplay: function(){
@@ -110,6 +114,17 @@ var game = {
 		$('#gamehs').hide();
 		$('#gamehtp').hide();
 		$('#gameabout').hide();
+		
+		
+	},
+	
+	gshuffle: function(){
+		
+		$('.gamelayer').hide();
+		$('#levelselectscreen').hide();
+		$('#mgshuffle').show();
+		
+		
 	},
 	
 	mhs: function(){
@@ -121,5 +136,34 @@ var game = {
 		$('#gamehs').show();
 		$('#gameabout').hide();
 	}
+
+};
+
+game.Draw = {
+
+    clear: function() {
+        game.ctx.clearRect(0, 0, game.WIDTH, game.HEIGHT);
+    },
+
+
+    rect: function(x, y, w, h, col) {
+        game.ctx.fillStyle = col;
+        game.ctx.fillRect(x, y, w, h);
+    },
+
+    circle: function(x, y, r, col) {
+        game.ctx.fillStyle = col;
+        game.ctx.beginPath();
+        game.ctx.arc(x + 5, y + 5, r, 0,  Math.PI * 2, true);
+        game.ctx.closePath();
+        game.ctx.fill();
+    },
+
+
+    text: function(string, x, y, size, col) {
+        game.ctx.font = 'bold '+size+'px Monospace';
+        game.ctx.fillStyle = col;
+        game.ctx.fillText(string, x, y);
+    }
 
 };
