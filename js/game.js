@@ -17,8 +17,8 @@ game.init();
 
 var game = {
 
-	WIDTH: 800, 
-    HEIGHT: 600, 
+	WIDTH: 320, 
+    HEIGHT: 480, 
     scale:  1,
     offset: {top: 0, left: 0},
     entities: [],
@@ -51,12 +51,14 @@ var game = {
 		
 		game.ctx = game.canvas.getContext('2d');
 		
+		game.ua = navigator.userAgent.toLowerCase();
+        game.android = game.ua.indexOf('android') > -1 ? true : false;
+        game.ios = ( game.ua.indexOf('iphone') > -1 || game.ua.indexOf('ipad') > -1  ) ? true : false;
+		
 		game.Draw.text('Hit: ' + game.score.hit, 20, 30, 14, '#fff');
         game.Draw.text('Escaped: ' + game.score.escaped, 20, 50, 14, '#fff');
         game.Draw.text('Accuracy: ' + game.score.accuracy + '%', 20, 70, 14, '#fff');
 		
-		game.ctx.font = "20px Georgia";
-		game.ctx.fillText("Hello World!", 10, 50);
 		
 		
 		
