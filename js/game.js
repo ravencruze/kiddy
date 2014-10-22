@@ -10,11 +10,6 @@ window.requestAnimFrame = (function(){
 })();
 
 
-$(window).load(function() {
-game.init();
-});
-
-
 var game = {
 
 	WIDTH: 320, 
@@ -54,13 +49,6 @@ var game = {
 		game.ua = navigator.userAgent.toLowerCase();
         game.android = game.ua.indexOf('android') > -1 ? true : false;
         game.ios = ( game.ua.indexOf('iphone') > -1 || game.ua.indexOf('ipad') > -1  ) ? true : false;
-		
-		game.Draw.text('Hit: ' + game.score.hit, 20, 30, 14, '#fff');
-        game.Draw.text('Escaped: ' + game.score.escaped, 20, 50, 14, '#fff');
-        game.Draw.text('Accuracy: ' + game.score.accuracy + '%', 20, 70, 14, '#fff');
-		
-		
-		
 		
 		game.resize();
 	},
