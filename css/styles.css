@@ -31,6 +31,16 @@ background: url(../img/background.png) no-repeat;
 text-align:center;
 }
 
+#gamehs {
+background: url(../img/background.png) no-repeat;
+text-align:center;
+}
+
+#gameabout {
+background: url(../img/background.png) no-repeat;
+text-align:center;
+}
+
 #gamestartscreen img {
 margin:0px;
 cursor:pointer;
@@ -42,4 +52,8 @@ padding-top:450px;
 
 .padtop2{
 padding-top:350px;
+}
+
+.padtop3{
+padding-top:20px;
 }

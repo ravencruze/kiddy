@@ -79,13 +79,17 @@ var game = {
 	mabout: function(){
 		$('.gamelayer').hide();
 		$('#gamestartscreen').hide();
-		$('#levelselectscreen').show();	
+		$('#levelselectscreen').hide();
+		$('#gamehs').hide();
+		$('#gameabout').show();
 	},
 	
 	mback: function(){
 		$('.gamelayer').hide();
 		$('#gamestartscreen').show();
-		$('#levelselectscreen').hide();	
+		$('#levelselectscreen').hide();
+		$('#gamehs').hide();
+		$('#gameabout').hide();
 	},
 	
 	mhtp: function(){
@@ -93,7 +97,29 @@ var game = {
 		$('.gamelayer').hide();
 		$('#gamestartscreen').hide();
 		$('#levelselectscreen').hide();
+		$('#gamehs').hide();
 		$('#gamehtp').show();
+		$('#gameabout').hide();
+	},
+	
+	mplay: function(){
+		
+		$('.gamelayer').hide();
+		$('#gamestartscreen').hide();
+		$('#levelselectscreen').show();
+		$('#gamehs').hide();
+		$('#gamehtp').hide();
+		$('#gameabout').hide();
+	},
+	
+	mhs: function(){
+		
+		$('.gamelayer').hide();
+		$('#gamestartscreen').hide();
+		$('#levelselectscreen').hide();
+		$('#gamehtp').hide();
+		$('#gamehs').show();
+		$('#gameabout').hide();
 	}
 
 };
